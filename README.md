@@ -2,7 +2,7 @@
 
 A production-grade, security-first AWS platform written in **AWS CDK (JavaScript)**. One config file per environment deploys the whole thing: networking, containers, database, edge security, API, storage, audit and cross-region backup.
 
-It is a sanitized version of infrastructure I designed and ran in production for an insurance platform sold through a bank's digital channels, where every layer had to pass the bank's security review. Client names, account IDs, IPs and domains have been replaced with placeholders.
+I designed this architecture for insurance platforms sold through banking channels, where every layer has to pass a bank's security review. Swap the values in `config/` and it deploys for any client.
 
 ![CDK](https://img.shields.io/badge/AWS%20CDK-v2-orange) ![Stacks](https://img.shields.io/badge/stacks-14-blue) ![Resources](https://img.shields.io/badge/resources-~200-blue) ![Tests](https://img.shields.io/badge/tests-jest-green)
 
