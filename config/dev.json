@@ -1,0 +1,67 @@
+{
+  "clientCode": "acme",
+  "environment": "dev",
+  "description": "development",
+  "region": "us-east-1",
+  "drRegion": "us-west-2",
+  "domain": "example.com",
+  "certificateArn": "arn:aws:acm:us-east-1:111122223333:certificate/00000000-0000-0000-0000-000000000000",
+  "cidrEnvironments": "172.24.0.0/16",
+  "cidrDatabase": "10.24.0.0/16",
+  "database": {
+    "engineVersion": "5.0.0",
+    "parameterGroupFamily": "docdb5.0",
+    "parameterFamily": "docdb50",
+    "username": "acmeAdmin",
+    "instances": 1
+  },
+  "staticSubdomain": "www",
+  "apiSubdomain": "api",
+  "middlewareSubdomain": "middleware",
+  "allowedHosts": [
+    ".example.com"
+  ],
+  "allowedIps": [
+    "203.0.113.10/32",
+    "198.51.100.0/24"
+  ],
+  "services": [
+    {
+      "name": "backoffice",
+      "albType": "public",
+      "subdomain": "admin",
+      "port": 80,
+      "cpu": 512,
+      "memoryLimitMiB": 1024,
+      "priority": 10,
+      "desiredCount": 1,
+      "stickySession": true,
+      "containerEnv": {
+        "APP_ENV": "development"
+      }
+    },
+    {
+      "name": "middleware",
+      "albType": "internal",
+      "subdomain": "middleware",
+      "port": 80,
+      "cpu": 512,
+      "memoryLimitMiB": 1024,
+      "priority": 10,
+      "desiredCount": 1,
+      "containerEnv": {
+        "APP_ENV": "development"
+      }
+    },
+    {
+      "name": "services",
+      "albType": "internal",
+      "subdomain": "services",
+      "port": 80,
+      "cpu": 256,
+      "memoryLimitMiB": 512,
+      "priority": 20,
+      "desiredCount": 0
+    }
+  ]
+}

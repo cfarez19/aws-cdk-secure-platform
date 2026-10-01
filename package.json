@@ -1,0 +1,24 @@
+{
+  "name": "aws-cdk-secure-platform",
+  "version": "0.1.0",
+  "bin": {
+    "aws-cdk-secure-platform": "bin/app.js"
+  },
+  "scripts": {
+    "build": "echo \"The build step is not required when using JavaScript!\" && exit 0",
+    "cdk": "cdk",
+    "test": "jest",
+    "synth": "cdk synth --all -c config=dev"
+  },
+  "devDependencies": {
+    "aws-cdk": "2.1117.0",
+    "jest": "^30"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.247.0",
+    "constructs": "^10.5.0"
+  },
+  "description": "Production-ready, security-first AWS platform in CDK: ECS Fargate, DocumentDB, WAF, API Gateway, cross-region backup.",
+  "license": "MIT",
+  "author": "Catalina Farez"
+}
