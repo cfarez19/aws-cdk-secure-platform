@@ -109,6 +109,10 @@ lib/backup/           AWS Backup plan and DR vault
 test/                 jest assertions on the synthesized templates
 ```
 
+## See also
+
+[aws-cdk-ecs-postgres-platform](https://github.com/cfarez19/aws-cdk-ecs-postgres-platform): the same network model with RDS PostgreSQL 17, a TLS-only Valkey cache and config-driven ECS services.
+
 ## Author
 
 **Catalina Farez** — AWS Cloud Architect (AWS Certified Solutions Architect – Associate).
